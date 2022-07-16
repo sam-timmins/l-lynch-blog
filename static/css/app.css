@@ -90,11 +90,19 @@ body {
     border-bottom: 2px solid var(--olive);
 }
 
+.border-top-olive {
+    border-top: 2px solid var(--olive);
+}
+
 /* Navbar */
 
 .nav-spacer,
 .navbar {
     height: 7.5rem;
+}
+
+.footer {
+    height: auto;
 }
 
 .navbar-light .navbar-toggler {
