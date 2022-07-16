@@ -58,7 +58,9 @@
         <title>{% block title %}{% endblock %} | Louise Lynch</title>
     </head>
 
-    <body class="d-flex flex-column min-vh-100 background-purple">
+    <body class="d-flex flex-column min-vh-100 background-white">
+        
+        {% include 'components/navbar.html' %}
             
             {% if messages %}
             <!-- Messages section -->
