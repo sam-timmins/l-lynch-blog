@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Meta tags -->
+        {% block meta %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="keywords" content="">
+        <meta name="Description" content="">
+        {% endblock %}
+
+        <!-- Extra meta -->
+        {% block extra_meta %}
+
+        {% endblock %}
+
+        <!-- Core JS -->
+        {% block corecss %}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <link rel="stylesheet" href="{% static 'css/app.css' %}">
+            <link rel="stylesheet" href="{% static 'css/media.css' %}">
+        {% endblock %}
+
+        <!-- Extra CSS -->
+        {% block extra_css %}
+
+        {% endblock %}
+
+        <!-- Core CSS -->
+        {% block corejs %}
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+            <script src="https://kit.fontawesome.com/522597c1d6.js" crossorigin="anonymous"></script>
+        {% endblock %}
+
+        <!-- Extra JS -->
+        {% block extra_js %}
+
+        {% endblock %}
+
+        <!-- Favicon -->
+        {% block favicon %}
+            <link rel="apple-touch-icon" sizes="180x180" href="#">
+            <link rel="icon" type="image/png" sizes="32x32" href="#">
+            <link rel="icon" type="image/png" sizes="16x16" href="#">
+            <link rel="manifest" href="#">
+        {% endblock %}
+
+
+        <title>{% block title %}{% endblock %} | Louise Lynch</title>
+    </head>
+
+    <body class="d-flex flex-column min-vh-100 background-purple">
+            
+            {% if messages %}
+            <!-- Messages section -->
+                <section class="">
+                    {% for message in messages %}
+                        {% with message.level as level %}
+                            {% if level == 40 %}
+                                
+                            {% elif level == 30 %}
+                                
+                            {% elif level == 25 %}
+                                
+                            {% else %}
+                                
+                            {% endif %}
+                        {% endwith %}
+                    {% endfor %}
+                </section>
+            {% endif %}
+
+            <!-- Header text -->
+
+            {% block header %}
+
+            {% endblock %}
+
+
+            {% block content %}
+
+            {% endblock %}
+
+
+        <!-- Postload JS -->
+        {% block postloadjs %}
+
+            <script src="{% static 'js/app.js' %}"></script>
+
+        {% endblock %}
+        
+    </body>
+
+</html>
