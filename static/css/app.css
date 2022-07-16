@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500&family=Klee+One&display=swap');
+
+/* 
+headers - font-family: 'Cormorant SC', serif;
+general text - font-family: 'Klee One', cursive; 
+*/
+
 :root {
     --purple: #411336;
     --white: #FEFCFF;
@@ -12,7 +19,7 @@ html {
 
 body {
     font-size: 1.6rem;
-    font-family: sans-serif;
+    font-family: 'Klee One', cursive;
 }
 
 /* Font sizes */
@@ -35,4 +42,26 @@ body {
 
 .text-xl {
     font-size: 5rem;
+}
+
+/* Font colours */
+
+.text-purple {
+    color: var(--purple);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-dark-blue {
+    color: var(--dark-blue);
+}
+
+.text-olive {
+    color: var(--olive);
+}
+
+.header-text {
+    font-family: 'Cormorant SC', serif;
 }
