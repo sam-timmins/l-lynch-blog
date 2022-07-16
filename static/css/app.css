@@ -65,3 +65,21 @@ body {
 .header-text {
     font-family: 'Cormorant SC', serif;
 }
+
+/* Background colours */
+
+.background-purple {
+    background-color: var(--purple);
+}
+
+.background-white {
+    background-color: var(--white);
+}
+
+.background-dark-blue {
+    background-color: var(--dark-blue);
+}
+
+.background-olive {
+    background-color: var(--olive);
+}
