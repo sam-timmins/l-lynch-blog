@@ -1,3 +1,85 @@
-.text {
-    color: blue;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500&family=Klee+One&display=swap');
+
+/* 
+headers - font-family: 'Cormorant SC', serif;
+general text - font-family: 'Klee One', cursive; 
+*/
+
+:root {
+    --purple: #411336;
+    --white: #FEFCFF;
+    --dark-blue: #393B4D;
+    --dark-green: #547C81;
+    --olive: #A7B7A7;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Klee One', cursive;
+}
+
+/* Font sizes */
+
+.text-xs {
+    font-size: 1.5rem;
+}
+
+.text-sm {
+    font-size: 2rem;
+}
+
+.text-md {
+    font-size: 3rem;
+}
+
+.text-lg {
+    font-size: 4rem;
+}
+
+.text-xl {
+    font-size: 5rem;
+}
+
+/* Font colours */
+
+.text-purple {
+    color: var(--purple);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-dark-blue {
+    color: var(--dark-blue);
+}
+
+.text-olive {
+    color: var(--olive);
+}
+
+.header-text {
+    font-family: 'Cormorant SC', serif;
+}
+
+/* Background colours */
+
+.background-purple {
+    background-color: var(--purple);
+}
+
+.background-white {
+    background-color: var(--white);
+}
+
+.background-dark-blue {
+    background-color: var(--dark-blue);
+}
+
+.background-olive {
+    background-color: var(--olive);
 }
