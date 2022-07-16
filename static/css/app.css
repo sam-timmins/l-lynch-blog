@@ -123,3 +123,9 @@ body {
     font-weight: 700;
     transition: 0.8s;
 }
+
+.footer-link:hover,
+.footer-link:focus {
+    color: var(--olive) !important;
+    transition: 0.8s;
+}
