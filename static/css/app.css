@@ -5,3 +5,12 @@
     --dark-green: #547C81;
     --olive: #A7B7A7;
 }
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: sans-serif;
+}
