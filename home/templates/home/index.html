@@ -1,15 +1,20 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
 
-    <link rel="stylesheet" href="{% static 'css/app.css' %}">
-    <title>Blog</title>
-</head>
-<body>
-    <h1 class="text">index.html</h1>
-</body>
-</html>
+{% load static %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+
+{% block content %}
+
+    <section class="container-fluid">
+       <h1 class="text-white">Louise's Blog</h1>
+    </section>
+
+{% endblock %}
