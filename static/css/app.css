@@ -1,3 +1,7 @@
-.text {
-    color: blue;
+:root {
+    --purple: #411336;
+    --white: #FEFCFF;
+    --dark-blue: #393B4D;
+    --dark-green: #547C81;
+    --olive: #A7B7A7;
 }
