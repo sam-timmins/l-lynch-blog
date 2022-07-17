@@ -97,7 +97,8 @@ body {
 /* Navbar */
 
 .nav-spacer,
-.navbar {
+.navbar,
+.spacer {
     height: 7.5rem;
 }
 
