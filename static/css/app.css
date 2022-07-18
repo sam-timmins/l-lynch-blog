@@ -66,6 +66,10 @@ body {
     font-family: 'Cormorant SC', serif;
 }
 
+.letter-spacing2 {
+    letter-spacing: 2px;
+}
+
 /* Background colours */
 
 .background-purple {
@@ -97,7 +101,8 @@ body {
 /* Navbar */
 
 .nav-spacer,
-.navbar {
+.navbar,
+.spacer {
     height: 7.5rem;
 }
 
@@ -122,6 +127,13 @@ body {
     color: var(--purple) !important;
     font-weight: 700;
     transition: 0.8s;
+}
+
+.active {
+    background-color: var(--white);
+    color: var(--dark-blue) !important;
+    font-weight: 700;
+    box-shadow: 0px 0px 10px 5px var(--olive);
 }
 
 .footer-link:hover,

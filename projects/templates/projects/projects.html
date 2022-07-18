@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+{% endblock %}
+
+{% block title %}
+    Projects
+{% endblock %}
+
+{% block header %}
+    <div class="col-12">
+        <h1
+            class="text-lg text-dark-blue text-header header-text text-center mb-5 py-5 letter-spacing2 border-bottom-olive">
+            Projects
+        </h1>
+
+        <p class="text-dark-green p-3 p-md-5 text-sm text-center text-lg-start">
+            Overview description of my projects. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic doloribus,
+            aperiam et
+            tempore omnis quas at architecto enim, unde dolorum, obcaecati placeat odio reiciendis. Deserunt fugiat quam hic
+            incidunt voluptatum!
+        </p>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <section class="container my-5">
+        <div class="row">
+
+            {% for project in all_projects|dictsort:"name" %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card my-3 p-0 position-relative">
+                        <a href="#" class="text-decoration-none text-purple">
+                            <h5 class="background-olive w-100 text-md p-3 m-0 text-purple text-center">{{ project.name|title }}
+                            </h5>
+                            <div class="card-body">
+                                {% if project.description %}
+                                <p class="text-sm">{{ project.description|safe|truncatechars_html:50 }}</p>
+                                {% endif %}
+                                <p class="position-absolute bottom-0 left-0">Blogs<span class="badge bg-secondary ms-3">4</span>
+                                </p>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+{% endblock %}

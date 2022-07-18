@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light py-0 px-lg-3 fixed-top background-purple border-bottom-olive">
     <div class="container-fluid p-0 m-0">
         <!-- Logo and hamburger -->
-        <a class="navbar-brand text-md text-header text-white ms-3" href="{% url 'home' %}"
+        <a class="navbar-brand text-md header-text text-white ms-3" href="{% url 'home' %}"
             aria-labelledby="navbar-site-name">
             {{ name }}
         </a>
@@ -21,7 +21,7 @@
             <ul class="navbar-nav ms-auto p-5 p-lg-0 background-purple">
 
                 <li class="nav-item me-lg-3 me-xl-5 my-3 my-lg-0">
-                    <a class="nav-link text-sm text-white text-center p-3 rounded-3" href="#"
+                    <a class="nav-link text-sm text-white text-center p-3 rounded-3 {% if '/projects/' in request.path %}active{% endif %}" href="{% url 'projects' %}"
                         aria-labelledby="navbar-projects">
                         Projects
                     </a>
@@ -32,7 +32,7 @@
                 </li>
 
                 <li class="nav-item me-lg-3 me-xl-5 my-3 my-lg-0">
-                    <a class="nav-link text-sm text-white text-center p-3 rounded-3" href="#"
+                    <a class="nav-link text-sm text-white text-center p-3 rounded-3 {% if '/blogs/' in request.path %}active{% endif %}" href="#"
                         aria-labelledby="navbar-blogs">
                         Blogs
                     </a>
@@ -44,7 +44,7 @@
 
                 
                 <li class="nav-item me-lg-3 me-xl-5 my-3 my-lg-0">
-                    <a class="nav-link text-sm text-white text-center p-3 rounded-3" href="#"
+                    <a class="nav-link text-sm text-white text-center p-3 rounded-3 {% if '/about/' in request.path %}active{% endif %}" href="#"
                         aria-labelledby="navbar-about">
                         About
                     </a>
@@ -55,7 +55,7 @@
                 </li>
 
                 <li class="nav-item me-lg-3 me-xl-5 my-3 my-lg-0">
-                    <a class="nav-link text-sm text-white text-center p-3 rounded-3" href="#"
+                    <a class="nav-link text-sm text-white text-center p-3 rounded-3 {% if '/contact/' in request.path %}active{% endif %}" href="#"
                         aria-labelledby="navbar-contact">
                         Contact
                     </a>
