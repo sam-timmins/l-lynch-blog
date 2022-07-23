@@ -18,12 +18,16 @@ Blogs
     </h1>
 
     <p class="text-dark-green p-3 p-md-5 text-sm text-center text-lg-start">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim similique eum odit alias temporibus consectetur doloribus 
-        provident, rerum eveniet dicta fugit, ea repellendus dolorum delectus magnam molestias, omnis saepe. Totam, nam 
-        perspiciatis non neque quas excepturi, temporibus facere ad, officia quaerat architecto quae repellat molestiae 
-        dicta asperiores mollitia minima quo quibusdam? Nostrum iusto voluptatibus blanditiis, voluptate suscipit exercitationem 
-        delectus ex eligendi. Assumenda debitis voluptate porro repellat obcaecati rerum aspernatur itaque soluta sit molestias 
-        dolorum alias omnis animi, doloribus sapiente dignissimos aperiam rem fugit in, eos hic? Suscipit maiores iusto, obcaecati 
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim similique eum odit alias temporibus consectetur
+        doloribus
+        provident, rerum eveniet dicta fugit, ea repellendus dolorum delectus magnam molestias, omnis saepe. Totam, nam
+        perspiciatis non neque quas excepturi, temporibus facere ad, officia quaerat architecto quae repellat molestiae
+        dicta asperiores mollitia minima quo quibusdam? Nostrum iusto voluptatibus blanditiis, voluptate suscipit
+        exercitationem
+        delectus ex eligendi. Assumenda debitis voluptate porro repellat obcaecati rerum aspernatur itaque soluta sit
+        molestias
+        dolorum alias omnis animi, doloribus sapiente dignissimos aperiam rem fugit in, eos hic? Suscipit maiores iusto,
+        obcaecati
         dignissimos, aspernatur iure fuga id molestias inventore voluptatum laborum deserunt.
     </p>
 </div>
@@ -34,32 +38,35 @@ Blogs
 <section class="container my-5">
     <div class="row">
 
-
-        <div class="col-12 col-md-6 col-lg-4">
+        {% for blog in blogs %}
+        <div class="col-12 col-md-6">
             <div class="card my-3 p-0 position-relative">
                 <a href="#" class="text-decoration-none text-purple">
-                    <h5 class="background-olive w-100 text-md p-3 m-0 text-purple text-center">Blog Title
+                    <h5 class="background-olive w-100 text-md p-3 m-0 text-purple text-center">{{ blog.title }}
                     </h5>
                     <div class="card-body">
                         <p class="text-sm">
-                            lots and lots of very interesting blog content
-                        </p>
+                            {{ blog.content|safe }}
                     </div>
 
                 </a>
+                
+                <div class="container my-3 position-absolute bottom-0 left-0">
 
-                <div class="my-3">
-                    <a href="#" class="d-inline text-decoration-none">
-                        <span class="badge bg-secondary mx-3">PhD</span>
-                    </a>
-                    <a href="#" class="d-inline text-decoration-none">
-                        <span class="badge bg-secondary mx-3">Teaching</span>
-                    </a>
+                    <hr class="w-75 text-dark-blue mx-auto">
+                    <div class="row">
+                        {% for project in blog.project.all %}
+                        <a href="#" class="col-6 text-decoration-none text-center text-sm my-2 ">
+                            <span
+                                class="badge p-3 header-text fw-light background-dark-blue text-white w-100 opacity-75">{{ project|title }}</span>
+                        </a>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
 
-
+        {% endfor %}
     </div>
 
 </section>
