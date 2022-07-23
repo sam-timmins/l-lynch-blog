@@ -32,7 +32,7 @@
                 </li>
 
                 <li class="nav-item me-lg-3 me-xl-5 my-3 my-lg-0">
-                    <a class="nav-link text-sm text-white text-center p-3 rounded-3 {% if '/blogs/' in request.path %}active{% endif %}" href="#"
+                    <a class="nav-link text-sm text-white text-center p-3 rounded-3 {% if '/blogs/' in request.path %}active{% endif %}" href="{% url 'blogs' %}"
                         aria-labelledby="navbar-blogs">
                         Blogs
                     </a>
