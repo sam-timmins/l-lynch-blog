@@ -3,18 +3,84 @@
 {% load static %}
 
 {% block extra_css %}
-
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 
 {% block title %}
     Homepage
 {% endblock %}
 
+{% block header %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 hero-container">
+            <div class="hero-content background-purple p-5 rounded-3 border-olive">
+                <h1 class="header-text text-xl text-white">{{ name }}</h1>
+                <p class="py-3 px-2 my-2 text-white hero-text">Master engineer and all round genius!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
 
 {% block content %}
 
-    <section class="container-fluid">
-       <h1 class="text-white">Louise's Blog</h1>
-    </section>
+<section class="container background-white">
+    <div class="row">
+        <div class="col-12">
+            <p class="header-text text-lg text-purple my-5 pb-3 text-center border-bottom-olive w-100">Latest Blog</p>
+        </div>
+        <div class="col-12 ">
+            <div class="my-3 p-0 ">
+                <a href="{% url 'blog_details' blog.slug %}" class="text-decoration-none text-purple row">
+                    <h5 class="w-100 text-md p-3 m-0 text-white rounded-0 rounded-lg-3 text-center background-purple col-12">{{ blog.title|title }}
+                        <p class="text-xs col-12 my-3">{{ blog.date }}</p>
+                    </h5>
+                    <div class="card-body">
+                        <span class="text-sm text-center">
+                            {{ blog.content|safe|truncatewords:200 }}
+                    </div>
+                </a>
+                
+                <div class="container mt-3">
+
+                    <hr class="w-75 text-dark-blue mx-auto">
+                    <div class="row">
+                        {% for project in blog.project.all %}
+                        <a href="{% url 'project_details' project.slug %}" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-2 ">
+                            <span
+                                class="badge header-text fw-light background-dark-blue text-white w-75 opacity-75">{{ project|title }}</span>
+                        </a>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="container my-5 mx-auto g-0 links-container border-top-olive text-center">
+    <div class="row my-5">
+        <div class="col-12">
+            <p class="header-text text-lg text-purple my-5 pb-3 text-center border-bottom-olive w-100">Projects and Blogs</p>
+        </div>
+        <div class="col-12 col-md-6 my-auto">
+            <a href="{% url 'blogs' %}" class="button background-purple text-white text-sm header-text fw-light p-3 letter-spacing2">
+                All Blogs
+            </a>
+        </div>
+        <div class="col-12 col-md-6">
+            <a href="{% url 'projects' %}" class="button background-purple text-white text-sm header-text fw-light p-3 letter-spacing2">
+                All Projects
+            </a>
+        </div>
+    </div>
+
+</section>
 
 {% endblock %}
+

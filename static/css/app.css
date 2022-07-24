@@ -98,6 +98,10 @@ body {
     border-top: 2px solid var(--olive);
 }
 
+.border-olive {
+    border: 2px solid var(--olive);
+}
+
 /* Navbar */
 
 .nav-spacer,
@@ -140,4 +144,22 @@ body {
 .footer-link:focus {
     color: var(--olive) !important;
     transition: 0.8s;
+}
+
+/* Buttons */
+
+.button {
+	box-shadow: 0px 10px 14px -7px var(--purple);
+	border-radius:3px;
+	display:inline-block;
+	cursor:pointer;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.button:hover {
+	background-color:var(--dark-green);
+    transition: 0.5s;
+}
+.button:active {
+    box-shadow: inset 0px 10px 14px -7px var(--purple);
 }

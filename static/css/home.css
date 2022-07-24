@@ -1,0 +1,17 @@
+.hero-container {
+    height: 70vh;
+    background-color: var(--dark-green);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/louiselynch/image/upload/v1658672311/hero_wegwcv.jpg");
+}
+
+.hero-content {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
