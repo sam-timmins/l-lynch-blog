@@ -41,6 +41,11 @@ class Blogs(models.Model):
         blank=True,
     )
 
+    image = models.ManyToManyField(
+        Images,
+        blank=True,
+    )
+
     slug = models.SlugField(
         null=True,
         blank=True,
