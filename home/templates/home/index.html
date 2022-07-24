@@ -26,22 +26,21 @@
 
 {% block content %}
 
-<section class="container my-5">
+<section class="container background-white">
     <div class="row">
-
-        {% for blog in blogs %}
-        <div class="col-12 col-md-6">
-            <div class="card my-3 p-0">
-                <a href="{% url 'blog_details' blog.slug %}" class="text-decoration-none text-purple">
-                    <h5 class="background-olive w-100 text-md p-3 m-0 text-purple text-center">{{ blog.title }}
+        <div class="col-12">
+            <p class="header-text text-lg text-purple my-5 pb-3 text-center border-bottom-olive w-100">Latest Blog</p>
+        </div>
+        <div class="col-12 ">
+            <div class="my-3 p-0 ">
+                <a href="{% url 'blog_details' blog.slug %}" class="text-decoration-none text-purple row">
+                    <h5 class="w-100 text-md p-3 m-0 text-white rounded-0 rounded-lg-3 text-center background-purple col-12">{{ blog.title|title }}
+                        <p class="text-xs col-12 my-3">{{ blog.date }}</p>
                     </h5>
                     <div class="card-body">
-                        <span class="text-sm">
-                            {{ blog.content|safe }}
+                        <span class="text-sm text-center">
+                            {{ blog.content|safe|truncatewords:200 }}
                     </div>
-
-
-
                 </a>
                 
                 <div class="container mt-3">
@@ -49,24 +48,20 @@
                     <hr class="w-75 text-dark-blue mx-auto">
                     <div class="row">
                         {% for project in blog.project.all %}
-                        <a href="#" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-2 ">
+                        <a href="{% url 'project_details' project.slug %}" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-2 ">
                             <span
                                 class="badge header-text fw-light background-dark-blue text-white w-75 opacity-75">{{ project|title }}</span>
                         </a>
                         {% endfor %}
-
-                            <p class="col-12 text-xs my-2">
-                                {{ blog.date }}
-                            </p>
 
                     </div>
                 </div>
             </div>
         </div>
 
-        {% endfor %}
     </div>
 
 </section>
 
 {% endblock %}
+
