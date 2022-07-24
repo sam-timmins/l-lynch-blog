@@ -42,7 +42,13 @@ Projects
                         <p class="text-sm">{{ project.description|safe|truncatechars_html:50 }}
                         {% endif %}
                         <p class="position-absolute bottom-0 left-0">
-                            Blogs<span class="badge bg-secondary ms-3">4</span>
+                            Blogs<span class="badge bg-secondary ms-3">
+                                {% for item, value in project_totals.items %}
+                                    {% if item|lower == project.name|lower %}
+                                        <span>{{value}}</span>
+                                    {% endif %}
+                                {% endfor %}
+                            </span>
                         </p>
                     </div>
 
