@@ -13,3 +13,10 @@
 .offcanvas  {
     min-height: 75%;
 }
+
+.blog-image {
+    height: 30rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
