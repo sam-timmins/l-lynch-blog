@@ -45,22 +45,29 @@ Blogs
                     <h5 class="background-olive w-100 text-md p-3 m-0 text-purple text-center">{{ blog.title }}
                     </h5>
                     <div class="card-body">
-                        <p class="text-sm">
+                        <span class="text-sm">
                             {{ blog.content|safe }}
                     </div>
 
+
+
                 </a>
                 
-                <div class="container my-3 position-absolute bottom-0 left-0">
+                <div class="container mt-3 position-absolute bottom-0 left-0">
 
                     <hr class="w-75 text-dark-blue mx-auto">
                     <div class="row">
                         {% for project in blog.project.all %}
-                        <a href="#" class="col-6 text-decoration-none text-center text-sm my-2 ">
+                        <a href="#" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-2 ">
                             <span
-                                class="badge p-3 header-text fw-light background-dark-blue text-white w-100 opacity-75">{{ project|title }}</span>
+                                class="badge header-text fw-light background-dark-blue text-white w-75 opacity-75">{{ project|title }}</span>
                         </a>
                         {% endfor %}
+
+                            <p class="col text-xs my-2">
+                                {{ blog.date }}
+                            </p>
+
                     </div>
                 </div>
             </div>
