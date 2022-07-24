@@ -25,9 +25,10 @@
     <div class="row">
 
         <div class=" col-12 d-none d-lg-block text-center mb-3">
-        
+
             {% for project in blog.project.all %}
-            <a href="{% url 'project_details' project.slug %}" class="col-lg-3 text-decoration-none text-center text-sm my-3 ">
+            <a href="{% url 'project_details' project.slug %}"
+                class="col-lg-3 text-decoration-none text-center text-sm my-3 ">
                 <span
                     class="badge header-text text-xs fw-light background-dark-blue text-white opacity-75 my-3">{{ project|title }}</span>
             </a>
@@ -39,9 +40,19 @@
                 {{ blog.date }}
             </p>
         </div>
-        <div class="col-12 mt-lg-5">
-            <p class=" text-md p-3 m-0 text-purple text-center">{{ blog.content|safe }}
+
+
+        <div class="col-12 mt-lg-5 p-3 text-center text-md-start">
+            {% if blog.image %}
+                {% for image in image_list %}
+                    <img src="{{ image.name.url }}" class="blog-image float-md-end mb-4 ms-md-5"
+                        alt="{{ image.description }}">
+                {% endfor %}
+            {% endif %}
+
+            <p class=" text-md m-0 text-purple text-center">{{ blog.content|safe }}
         </div>
+
     </div>
 
 
@@ -60,9 +71,9 @@
 
             <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
 
-
                 {% for project in blog.project.all %}
-                <a href="{% url 'project_details' project.slug %}" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-3 ">
+                <a href="{% url 'project_details' project.slug %}"
+                    class="col-12 col-sm-6 text-decoration-none text-center text-sm my-3 ">
                     <span
                         class="badge header-text text-sm fw-light background-dark-blue text-white w-75 opacity-75">{{ project|title }}</span>
                 </a>

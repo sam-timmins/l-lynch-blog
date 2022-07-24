@@ -1,8 +1,21 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 
 from projects.models import Projects
+
+
+class Images(models.Model):
+    """ Image model """
+    name = CloudinaryField('image')
+
+    description = models.CharField(
+        max_length=150,
+        blank=False,
+        null=True,
+    )
+
 
 class Blogs(models.Model):
     """ Blogs model """
@@ -25,6 +38,11 @@ class Blogs(models.Model):
 
     content = RichTextField(
         null=True,
+        blank=True,
+    )
+
+    image = models.ManyToManyField(
+        Images,
         blank=True,
     )
 
