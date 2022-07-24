@@ -34,7 +34,7 @@ Projects
         {% for project in all_projects|dictsort:"name" %}
         <div class="col-12 col-md-6 col-lg-4">
             <div class="card my-3 p-0 position-relative">
-                <a href="#" class="text-decoration-none text-purple">
+                <a href="{% url 'project_details' project.slug %}" class="text-decoration-none text-purple">
                     <h5 class="background-olive w-100 text-md p-3 m-0 text-purple text-center">{{ project.name|title }}
                     </h5>
                     <div class="card-body">

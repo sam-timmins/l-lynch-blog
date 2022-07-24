@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from blogs.models import Blogs
 from .models import Projects
@@ -33,3 +33,28 @@ def projects(request):
     }
 
     return render(request, 'projects/projects.html', context)
+
+
+def project_details(request, project_slug):
+    """ individual project details """
+
+    project = get_object_or_404(Projects, slug=project_slug)
+
+    print(project_slug)
+
+    blogs = Blogs.objects.all()
+
+    blog_list = []
+
+    for blog in blogs:
+        for blog_projects in blog.project.all():
+            if blog_projects.slug == project_slug:
+                blog_list.append(blog)
+
+    context = {
+        'project': project,
+        'blogs': blogs,
+        'blog_list': blog_list,
+    }
+
+    return render(request, 'projects/project-details.html', context)

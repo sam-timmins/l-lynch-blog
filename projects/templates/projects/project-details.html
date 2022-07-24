@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog-details.css' %}">
+{% endblock %}
+
+{% block title %}
+{{ project.name | title }}
+{% endblock %}
+
+{% block header %}
+<div class="col-12">
+    <h1
+        class="text-lg text-dark-blue text-header header-text text-center mb-5 py-5 letter-spacing2 border-bottom-olive">
+        {{ project.name| title}}
+    </h1>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="container mb-5 mt-2 mt-lg-5">
+    <div class="row">
+
+        {% if project.description %}
+        <div class="col-12 mt-lg-5">
+            <p class=" text-md p-3 m-0 text-purple text-center"> {{ project.description|safe }}
+        </div>
+        {% endif %}
+
+        {% for blog in blog_list %}
+
+        <div class="col-12 col-md-6">
+            <div class="card my-3 p-0">
+                <a href="{% url 'blog_details' blog.slug %}" class="text-decoration-none text-purple">
+                    <h5 class="background-olive w-100 text-md p-3 m-0 text-purple text-center">{{ blog.title }}
+                    </h5>
+                    <div class="card-body">
+                        <span class="text-sm">
+                            {{ blog.content|safe }}
+                    </div>
+
+
+
+                </a>
+
+                <div class="container mt-3">
+
+                    <hr class="w-75 text-dark-blue mx-auto">
+                    <div class="row">
+                        {% for project in blog.project.all %}
+                            <a href="{% url 'project_details' project.slug %}" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-2 ">
+                                <span
+                                    class="badge header-text fw-light background-dark-blue text-white w-75 opacity-75">{{ project|title }}</span>
+                            </a>
+                        {% endfor %}
+
+                        <p class="col-12 text-xs my-2">
+                            {{ blog.date }}
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+</section>
+
+{% endblock %}
