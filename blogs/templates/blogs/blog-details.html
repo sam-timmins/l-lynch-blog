@@ -27,7 +27,7 @@
         <div class=" col-12 d-none d-lg-block text-center mb-3">
         
             {% for project in blog.project.all %}
-            <a href="#" class="col-lg-3 text-decoration-none text-center text-sm my-3 ">
+            <a href="{% url 'project_details' project.slug %}" class="col-lg-3 text-decoration-none text-center text-sm my-3 ">
                 <span
                     class="badge header-text text-xs fw-light background-dark-blue text-white opacity-75 my-3">{{ project|title }}</span>
             </a>
