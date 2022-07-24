@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blog-details.css' %}">
+{% endblock %}
+
+{% block title %}
+{{ blog.title }}
+{% endblock %}
+
+{% block header %}
+<div class="col-12">
+    <h1
+        class="text-lg text-dark-blue text-header header-text text-center mb-5 py-5 letter-spacing2 border-bottom-olive">
+        {{ blog.title }}
+    </h1>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="container mb-5 mt-2 mt-lg-5">
+    <div class="row">
+
+        <div class=" col-12 d-none d-lg-block text-center mb-3">
+        
+            {% for project in blog.project.all %}
+            <a href="#" class="col-lg-3 text-decoration-none text-center text-sm my-3 ">
+                <span
+                    class="badge header-text text-xs fw-light background-dark-blue text-white opacity-75 my-3">{{ project|title }}</span>
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="col-12">
+            <p class="text-sm text-purple text-center">
+                {{ blog.date }}
+            </p>
+        </div>
+        <div class="col-12 mt-lg-5">
+            <p class=" text-md p-3 m-0 text-purple text-center">{{ blog.content|safe }}
+        </div>
+    </div>
+
+
+    </div>
+    <div class="d-lg-none">
+
+        <button class="projects-off-canvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+            aria-controls="offcanvasTop"><i class="fa-solid fa-chevron-down"></i></button>
+
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+            <div class="offcanvas-header">
+                <h5 id="offcanvasTopLabel" class="text-sm">Associated Projects</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column justify-content-center align-items-center">
+
+
+                {% for project in blog.project.all %}
+                <a href="#" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-3 ">
+                    <span
+                        class="badge header-text text-sm fw-light background-dark-blue text-white w-75 opacity-75">{{ project|title }}</span>
+                </a>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</section>
+
+{% endblock %}

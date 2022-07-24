@@ -40,8 +40,8 @@ Blogs
 
         {% for blog in blogs %}
         <div class="col-12 col-md-6">
-            <div class="card my-3 p-0 position-relative">
-                <a href="#" class="text-decoration-none text-purple">
+            <div class="card my-3 p-0">
+                <a href="{% url 'blog_details' blog.slug %}" class="text-decoration-none text-purple">
                     <h5 class="background-olive w-100 text-md p-3 m-0 text-purple text-center">{{ blog.title }}
                     </h5>
                     <div class="card-body">
@@ -53,7 +53,7 @@ Blogs
 
                 </a>
                 
-                <div class="container mt-3 position-absolute bottom-0 left-0">
+                <div class="container mt-3">
 
                     <hr class="w-75 text-dark-blue mx-auto">
                     <div class="row">
@@ -64,7 +64,7 @@ Blogs
                         </a>
                         {% endfor %}
 
-                            <p class="col text-xs my-2">
+                            <p class="col-12 text-xs my-2">
                                 {{ blog.date }}
                             </p>
 

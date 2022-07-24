@@ -1,0 +1,15 @@
+.projects-off-canvas {
+    position: fixed;
+    top: 7rem;
+    right: 0;
+    height: 3rem;
+    width: 8rem;
+    background-color: var(--olive);
+    color: var(--purple);
+    border-radius: 0 0 0 1rem;
+    border: 1px solid var(--purple);
+}
+
+.offcanvas  {
+    min-height: 75%;
+}
