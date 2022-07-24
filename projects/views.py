@@ -40,8 +40,6 @@ def project_details(request, project_slug):
 
     project = get_object_or_404(Projects, slug=project_slug)
 
-    print(project_slug)
-
     blogs = Blogs.objects.all()
 
     blog_list = []
