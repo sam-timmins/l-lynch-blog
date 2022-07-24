@@ -12,4 +12,8 @@
         font-size: 5rem;
     }
 
+    .hero-text {
+        font-size: 3rem !important;
+    }
+
 }
