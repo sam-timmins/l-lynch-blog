@@ -62,7 +62,7 @@
 
 
                 {% for project in blog.project.all %}
-                <a href="#" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-3 ">
+                <a href="{% url 'project_details' project.slug %}" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-3 ">
                     <span
                         class="badge header-text text-sm fw-light background-dark-blue text-white w-75 opacity-75">{{ project|title }}</span>
                 </a>
