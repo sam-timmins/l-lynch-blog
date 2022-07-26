@@ -44,13 +44,35 @@
 
         <div class="col-12 mt-lg-5 p-3 text-center text-md-start">
             {% if blog.image %}
-                {% for image in image_list %}
-                    <img src="{{ image.name.url }}" class="blog-image float-md-end mb-4 ms-md-5"
-                        alt="{{ image.description }}">
-                {% endfor %}
+            {% for image, image_number in image_list.items %}
+            {% if image_number == 1 %}
+            <a href="{{ image.name.url }}" target="_blank" class="float-md-end text-decoration-none">
+                <img src="{{ image.name.url }}" class="blog-image mb-4 ms-md-5" alt="{{ image.description }}">
+                <figcaption class="figure-caption text-center mb-4">Figure {{ image_number }}: {{ image.description }}
+                </figcaption>
+            </a>
+            {% endif %}
+            {% endfor %}
             {% endif %}
 
-            <p class=" text-md m-0 text-purple text-center">{{ blog.content|safe }}
+
+            <p class=" text-md m-0 text-purple text-center">{{ blog.content|safe }}</p>
+
+                {% if blog.image %}
+                <div class="row my-5">
+                    {% for image, image_number in image_list.items %}
+                    {% if image_number >= 2 %}
+
+                    <a href="{{ image.name.url }}" target="_blank" class=" text-decoration-none col-12 {% if image_number == 2 or 3 %}col-lg-3{% else %}col-lg-4{% endif %} mx-auto text-center my-3">
+                        <img src="{{ image.name.url }}" class="blog-image mb-3" alt="{{ image.description }}">
+                        <figcaption class="figure-caption text-center mb-4">Figure {{ image_number }}:
+                            {{ image.description }}</figcaption>
+                    </a>
+
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
         </div>
 
     </div>

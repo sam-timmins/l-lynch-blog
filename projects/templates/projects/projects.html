@@ -32,27 +32,41 @@ Projects
     <div class="row">
 
         {% for project in all_projects|dictsort:"name" %}
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-md-6">
             <div class="card my-3 p-0 position-relative">
-                <a href="{% url 'project_details' project.slug %}" class="text-decoration-none text-purple">
+                <div class="text-purple">
                     <h5 class="background-olive w-100 text-md p-3 m-0 text-purple text-center">{{ project.name|title }}
                     </h5>
                     <div class="card-body">
                         {% if project.description %}
-                        <p class="text-sm">{{ project.description|safe|truncatechars_html:50 }}
+                        <p class="text-sm">{{ project.description|safe|truncatechars_html:150 }}
                         {% endif %}
-                        <p class="position-absolute bottom-0 left-0">
-                            Blogs<span class="badge bg-secondary ms-3">
-                                {% for item, value in project_totals.items %}
-                                    {% if item|lower == project.name|lower %}
+
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <a href="{% url 'project_details' project.slug %}"
+                                class="button background-purple text-white text-sm header-text fw-light p-3 letter-spacing2 my-5">
+                                View Project
+                            </a>
+                            </div>
+                        </div>
+                            
+                            <div class="mt-5">
+                                <p class="position-absolute bottom-0 left-0">
+                                    Blogs<span class="badge bg-secondary ms-3">
+                                        {% for item, value in project_totals.items %}
+                                        {% if item|lower == project.name|lower %}
                                         <span>{{value}}</span>
-                                    {% endif %}
-                                {% endfor %}
-                            </span>
-                        </p>
+
+                                        {% endif %}
+                                        {% endfor %}
+                                    </span>
+                                </p>
+                            </div>
+
                     </div>
 
-                </a>
+                </div>
             </div>
         </div>
         {% endfor %}
