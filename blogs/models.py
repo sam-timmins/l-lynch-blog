@@ -16,6 +16,9 @@ class Images(models.Model):
         null=True,
     )
 
+    def __str__(self):
+        return str(self.description)
+
 
 class Blogs(models.Model):
     """ Blogs model """
