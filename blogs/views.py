@@ -20,10 +20,14 @@ def blog_details(request, blog_slug):
 
     blog = get_object_or_404(Blogs, slug=blog_slug)
 
-    image_list = []
+    image_list = {}
+    image_number = 1
 
     for image in blog.image.all():
-        image_list.append(image)
+        image_list.update({image: image_number})
+        image_number += 1
+
+        print(image_list)
 
     context = {
         'blog': blog,
