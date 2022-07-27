@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block header %}
+<div class="col-12">
+    <h1
+        class="text-lg text-dark-blue text-header header-text text-center py-5 letter-spacing2 border-bottom-olive">
+        Contact
+    </h1>
+
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="row container text-purple py-5 p-0 mx-auto d-flex flex-column flex-lg-row align-items-center justify-content-center">
+
+
+
+        {% if contact_name %}
+
+        <div class="col-12">
+            <p class="text-md mt-5 p-3 text-center mx-auto">
+                Thanks for your message {{ contact_name }}, we will respond as soon as possible.
+            </p>
+        </div>
+
+        {% else %}
+
+            <div class="col-12 col-lg-6 p-5 d-flex flex-column align-items-center justify-content-center">
+                <!-- Contact Form -->
+                <div class="row">
+                    <div class="col-12">
+                        <form action="{% url 'contact' %}" method="POST"
+                            class="container p-0 d-flex flex-column justify-content-center align-items-center mb-5">
+                            {% csrf_token %}
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input type="text" name="message-name" placeholder="Your Name" {% if saved_name %} value="{{ saved_name }}" {% endif %}
+                                        class="my-3 mt-md-5 p-2 form-control text-xs" maxlength="150" required
+                                        id="message-name">
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <input type="email" name="message-email" placeholder="Your Email" {% if saved_email %} value="{{ saved_email }}" {% endif %}
+                                        class="my-3 mt-lg-5 p-2 form-control text-xs" maxlength="150" required
+                                        id="message-email">
+                                </div>
+
+                                <div class="col-12">
+                                    <textarea name="message" placeholder="Your Message"
+                                        class="my-3 mt-lg-5 form-control p-3 text-xs" maxlength="150" required
+                                        id="message">{% if saved_message %}{{ saved_message }}{% endif %}</textarea>
+                                </div>
+
+                                <div class="col-12 text-center">
+                                    <button type="submit"
+                                        class="button background-purple text-white text-sm header-text p-3 letter-spacing2 my-5 border-0">Send
+                                        Message</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                        <p class="text-center text-sm px-md-5 my-3">Please feel free to contact me via <a href="mailto:{{ email }}"
+                                class="background-purple text-white text-sm header-text letter-spacing2 border-0 px-3 text-decoration-none">email</a> or simply fill
+                            out the form above. I will alway try to reply to all messages, queries or feedback.</p>
+
+                    </div>
+                </div>
+            </div>
+
+            
+        {% endif %}
+
+</section>
+
+{% endblock %}
