@@ -20,7 +20,7 @@ def contact(request):
 
             messages.error(
                 request,
-                'Please include a message so we can help.'
+                'Please include a message.'
                 )
             return render(request, 'contact/contact.html', {
                 'saved_name': saved_name,

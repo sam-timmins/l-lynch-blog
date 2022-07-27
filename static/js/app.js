@@ -5,3 +5,11 @@ const getFullYear = () =>
   (copyrightYearRef.innerHTML = new Date().getFullYear());
 
 getFullYear();
+
+
+$(document).ready(function () {
+  // Bootstrap
+  // Show the toasts
+  $(".toast").toast('show');
+
+});

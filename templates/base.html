@@ -64,20 +64,24 @@
             <div class="spacer"></div>
             {% if messages %}
             <!-- Messages section -->
-                <section class="">
-                    {% for message in messages %}
-                        {% with message.level as level %}
-                            {% if level == 40 %}
-                                
-                            {% elif level == 30 %}
-                                
-                            {% elif level == 25 %}
-                                
-                            {% else %}
-                                
-                            {% endif %}
-                        {% endwith %}
-                    {% endfor %}
+                <section class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 g-0">
+                            {% for message in messages %}
+                            {% with message.level as level %}
+                                {% if level == 40 %}
+                                    {% include 'components/messages/message-error.html' %}
+                                {% elif level == 30 %}
+                                    
+                                {% elif level == 25 %}
+                                    
+                                {% else %}
+                                    
+                                {% endif %}
+                            {% endwith %}
+                        {% endfor %}
+                        </div>
+                    </div>
                 </section>
             {% endif %}
 
