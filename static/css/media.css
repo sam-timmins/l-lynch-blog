@@ -1,3 +1,17 @@
+@media (min-width: 576px) {
+    .card {
+        height: 38rem !important;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .card {
+        height: 30rem !important;
+    }
+
+}
+
 @media (min-width: 992px) {
     .navbar-collapse {
         background-color: transparent;
