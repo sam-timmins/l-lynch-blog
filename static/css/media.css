@@ -1,12 +1,12 @@
 @media (min-width: 576px) {
-    .card {
+    .card-projects {
         height: 38rem !important;
     }
 
 }
 
 @media (min-width: 768px) {
-    .card {
+    .card-projects {
         height: 30rem !important;
     }
 
