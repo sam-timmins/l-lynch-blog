@@ -52,9 +52,9 @@ Blogs
                     <hr class="w-75 text-dark-blue mx-auto">
                     <div class="row">
                         {% for project in blog.project.all %}
-                        <a href="{% url 'project_details' project.slug %}" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-2 ">
+                        <a href="{% url 'project_details' project.slug %}" class="col-12 col-sm-6 text-decoration-none text-center text-sm my-2">
                             <span
-                                class="badge header-text fw-light background-dark-blue text-white w-75 opacity-75">{{ project|title }}</span>
+                                class="badge project-button header-text fw-light background-dark-blue text-white w-75 opacity-75">{{ project|title }}</span>
                         </a>
                         {% endfor %}
 
