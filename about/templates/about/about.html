@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/blogs.css' %}">
+{% endblock %}
+
+{% block title %}
+Blogs
+{% endblock %}
+
+{% block header %}
+<div class="col-12">
+    <h1
+        class="text-lg text-dark-blue text-header header-text text-center mb-5 py-5 letter-spacing2 border-bottom-olive">
+        About
+    </h1>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<section class="container mb-5 p-5">
+    <div class="row">
+        <p class="col-12 text-purple fw-bold text-center text-sm lh-lg">
+            A structural engineer learning what the future of the profession looks like and preparing students for that
+            future.
+        </p>
+
+        <hr class="w-75 text-dark-blue mx-auto my-5">
+
+        <p class="col-12 text-purple lh-lg">
+
+            I worked in the construction industry for 10 years before becoming a lecturer on civil and structural
+            engineering programmes. While in the industry, I spent half my time office based, working on design,
+            mentoring graduates, and project managing etc, the other half I was on site doing safety and quality
+            monitoring, and being client represenative etc. So I have seen both sides of the industry, granted all with
+            the same large utility company.
+        </p>
+        <p class="col-12 text-purple lh-lg">
+            I am a chartered engineer with Engineers Ireland, have an MSc in Structural Engineering from the University
+            of Sheffield, a PGDip in Third Level Learning and Teaching in TU Dublin, and am now a PhD student at the
+            University of Bristol. All while working full time, so I am use to part-time study at this stage but still
+            struggle with the workload.
+        </p>
+        <p class="col-12 text-purple lh-lg">
+            My PhD is looking at how embodied carbon of a structural project can be reduced. This is not purely a case
+            of listing actions, this is an exercise in analysing how a whole system of people across the life of a
+            project think. Every entity across the whole project process needs to recognise their contribution to the
+            problem and make changes. From education to handover and everything in between. This research has benefits
+            to me as an engineer, and as an educator of the next generation of structural engineers, but also to the
+            industries community as a whole.
+        </p>
+        <p class="col-12 text-purple lh-lg">
+            This blog will capture observations from my research and teaching experiences.
+        </p>
+
+    </div>
+
+</section>
+
+{% endblock %}
